@@ -6,8 +6,8 @@ name: front Manual workflow
 # or API.
 on:
   push:
-    paths:
-      - /**
+    branches:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
