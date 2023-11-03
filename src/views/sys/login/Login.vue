@@ -37,10 +37,10 @@
             class="relative w-full px-5 py-8 mx-auto my-auto rounded-md shadow-md xl:ml-16 xl:bg-transparent sm:px-8 xl:p-4 xl:shadow-none sm:w-3/4 lg:w-2/4 xl:w-auto enter-x"
           >
             <LoginForm />
-            <ForgetPasswordForm />
+            <!-- <ForgetPasswordForm />
             <RegisterForm />
             <MobileForm />
-            <QrCodeForm />
+            <QrCodeForm /> -->
           </div>
         </div>
       </div>
@@ -51,10 +51,10 @@
   import { computed } from 'vue';
   import { AppLogo, AppLocalePicker, AppDarkModeToggle } from '/@/components/Application';
   import LoginForm from './LoginForm.vue';
-  import ForgetPasswordForm from './ForgetPasswordForm.vue';
-  import RegisterForm from './RegisterForm.vue';
-  import MobileForm from './MobileForm.vue';
-  import QrCodeForm from './QrCodeForm.vue';
+  // import ForgetPasswordForm from './ForgetPasswordForm.vue';
+  // import RegisterForm from './RegisterForm.vue';
+  // import MobileForm from './MobileForm.vue';
+  // import QrCodeForm from './QrCodeForm.vue';
   import { useGlobSetting } from '/@/hooks/setting';
   import { useI18n } from '/@/hooks/web/useI18n';
   import { useDesign } from '/@/hooks/web/useDesign';
@@ -116,6 +116,7 @@
     min-height: 100%;
     overflow: hidden;
 
+    /* stylelint-disable-next-line media-query-no-invalid */
     @media (max-width: @screen-xl) {
       background-color: #293146;
 
@@ -137,6 +138,7 @@
       background-position: 100%;
       background-size: auto 100%;
 
+      /* stylelint-disable-next-line media-query-no-invalid */
       @media (max-width: @screen-xl) {
         display: none;
       }
@@ -189,18 +191,22 @@
     input:not([type='checkbox']) {
       min-width: 360px;
 
+      /* stylelint-disable-next-line media-query-no-invalid */
       @media (max-width: @screen-xl) {
         min-width: 320px;
       }
 
+      /* stylelint-disable-next-line media-query-no-invalid */
       @media (max-width: @screen-lg) {
         min-width: 260px;
       }
 
+      /* stylelint-disable-next-line media-query-no-invalid */
       @media (max-width: @screen-md) {
         min-width: 240px;
       }
 
+      /* stylelint-disable-next-line media-query-no-invalid */
       @media (max-width: @screen-sm) {
         min-width: 160px;
       }

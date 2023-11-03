@@ -1,11 +1,14 @@
 import type { RouteMeta } from 'vue-router';
 
 export interface RouteItem {
+  name: string;
   path: string;
-  component: any;
+  component: string;
+  permission: string;
+  sort: number;
+  parent: string;
+  type: number;
   meta: RouteMeta;
-  name?: string;
-  alias?: string | string[];
   redirect?: string;
   caseSensitive?: boolean;
   children?: RouteItem[];

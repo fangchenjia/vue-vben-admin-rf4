@@ -10,6 +10,7 @@ interface UseAttrsOptions {
 const DEFAULT_EXCLUDE_KEYS = ['class', 'style'];
 const LISTENER_PREFIX = /^on[A-Z]/;
 
+// 将属性对象转换为键值对数组
 function entries<T>(obj: Recordable<T>): [string, T][] {
   return Object.keys(obj).map((key: string) => [key, obj[key]]);
 }

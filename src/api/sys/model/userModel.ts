@@ -2,7 +2,7 @@
  * @description: Login interface parameters
  */
 export interface LoginParams {
-  username: string;
+  mobile: string;
   password: string;
 }
 
@@ -16,7 +16,8 @@ export interface RoleInfo {
  */
 export interface LoginResultModel {
   userId: string | number;
-  token: string;
+  refreshToken: string;
+  accessToken: string;
   role: RoleInfo;
 }
 
@@ -26,11 +27,11 @@ export interface LoginResultModel {
 export interface GetUserInfoModel {
   roles: RoleInfo[];
   // 用户id
-  userId: string | number;
+  _id: string;
   // 用户名
-  username: string;
+  nickname: string;
   // 真实名字
-  realName: string;
+  mobile: string;
   // 头像
   avatar: string;
   // 介绍

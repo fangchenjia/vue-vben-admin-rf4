@@ -128,6 +128,12 @@ export const usePermissionStore = defineStore({
         return roleList.some((role) => roles.includes(role));
       };
 
+      // 按钮权限过滤器 过滤按钮权限
+      const buttonFilter = (route: AppRouteRecordRaw) => {
+        const { type } = route;
+        return type !== 2;
+      };
+
       const routeRemoveIgnoreFilter = (route: AppRouteRecordRaw) => {
         const { meta } = route;
         // ignoreRoute 为true 则路由仅用于菜单生成，不会在实际的路由表中出现
@@ -142,7 +148,6 @@ export const usePermissionStore = defineStore({
       const patchHomeAffix = (routes: AppRouteRecordRaw[]) => {
         if (!routes || routes.length === 0) return;
         let homePath: string = userStore.getUserInfo.homePath || PageEnum.BASE_HOME;
-
         function patcher(routes: AppRouteRecordRaw[], parentPath = '') {
           if (parentPath) parentPath = parentPath + '/';
           routes.forEach((route: AppRouteRecordRaw) => {
@@ -227,12 +232,16 @@ export const usePermissionStore = defineStore({
             console.error(error);
           }
 
+          // 过滤按钮权限
+          routeList = filter(routeList, buttonFilter);
+
           // Dynamically introduce components
           // 动态引入组件
           routeList = transformObjToRoute(routeList);
 
           //  Background routing to menu structure
           //  后台路由到菜单结构
+
           const backMenuList = transformRouteToMenu(routeList);
           this.setBackMenuList(backMenuList);
 
