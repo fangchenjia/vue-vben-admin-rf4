@@ -41,6 +41,6 @@ jobs:
             docker rm rf4-community-front-admin || true
             docker rmi fangchenjia/rf4-community-front-admin || true
             docker pull fangchenjia/rf4-community-front-admin
-            docker run -d -p 8084:80 --name rf4-community-front-admin fangchenjia/rf4-community-front-admin   -e VG_BASE_URL=/api-admin
+            docker run -d -p 8084:80 -e VG_BASE_URL=/api-admin --name rf4-community-front-admin fangchenjia/rf4-community-front-admin
 
   
