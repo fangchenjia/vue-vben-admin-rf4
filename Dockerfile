@@ -1,5 +1,5 @@
 # node 构建
-FROM node:16-alpine as build-stage
+FROM node:18-alpine as build-stage
 # 署名
 MAINTAINER fangchenjia '2362414624@qq.com'
 WORKDIR /app
