@@ -5,7 +5,7 @@ MAINTAINER fangchenjia '2362414624@qq.com'
 WORKDIR /app
 COPY . ./
 # 设置 node 阿里镜像
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npmmirror.com
 # 设置--max-old-space-size
 ENV NODE_OPTIONS=--max-old-space-size=16384
 # 设置阿里镜像、pnpm、依赖、编译
